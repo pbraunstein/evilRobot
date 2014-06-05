@@ -10,6 +10,7 @@
 #import "robotView.h"
 
 @interface evilRobotViewController ()
+@property (weak, nonatomic) IBOutlet robotView *robot;
 
 @end
 
@@ -28,19 +29,17 @@
 
 - (void)flash
 {
-    for (UIView *view in [self.view subviews]) {
-        if ([view isKindOfClass:[robotView class]]) {
-            robotView *thisClass = (robotView *)view;
-            thisClass.bulbRed = !thisClass.bulbRed;
-            [thisClass setNeedsDisplay];
-        }
-    }
+    self.robot.bulbRed = !self.robot.bulbRed;
+    [self.robot setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)tapReceived:(UITapGestureRecognizer *)sender {
+    [self.robot flashEyes];
 }
 
 @end

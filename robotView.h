@@ -9,13 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface robotView : UIView
-@property (nonatomic) CGRect head;
-@property (nonatomic) CGRect neck;
-@property (nonatomic) CGRect body;
-@property (nonatomic) CGFloat eyeRadius;
-@property (nonatomic) CGPoint eyeOneCenter;
-@property (nonatomic) CGPoint eyeTwoCenter;
-@property (nonatomic) CGPoint antenaBulb;
-@property (nonatomic) CGFloat antenaRadius;
+
+// whether the antena bulb is flashing
 @property (nonatomic) BOOL bulbRed;
+
+// flashEyes to make them menacing
+- (void)flashEyes;
 @end

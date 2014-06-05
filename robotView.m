@@ -9,7 +9,15 @@
 #import "robotView.h"
 
 @interface robotView()
-
+@property (nonatomic) CGRect head;
+@property (nonatomic) CGRect neck;
+@property (nonatomic) CGRect body;
+@property (nonatomic) CGFloat eyeRadius;
+@property (nonatomic) CGPoint eyeOneCenter;
+@property (nonatomic) CGPoint eyeTwoCenter;
+@property (nonatomic) UIColor *eyeColor;
+@property (nonatomic) CGPoint antenaBulb;
+@property (nonatomic) CGFloat antenaRadius;
 @end
 
 @implementation robotView
@@ -42,6 +50,7 @@
     self.eyeRadius = 10;
     self.eyeOneCenter = CGPointMake(self.head.origin.x + (self.head.size.width / 3), self.head.origin.y + (self.head.size.height / 2));
     self.eyeTwoCenter = CGPointMake(self.head.origin.x + (2 * self.head.size.width / 3), self.head.origin.y + (self.head.size.height / 2));
+    self.eyeColor = [UIColor redColor];
     
     // Antena
     self.antenaRadius = 5.0;
@@ -118,7 +127,7 @@
 - (void)drawEyes
 {
     UIBezierPath *eyeOne = [UIBezierPath bezierPathWithArcCenter:self.eyeOneCenter radius:self.eyeRadius startAngle:0 endAngle:360 clockwise:YES];
-     [[UIColor redColor] setFill];
+     [self.eyeColor setFill];
     
     
     [eyeOne fill];
@@ -142,6 +151,19 @@
     }
 
     [bulb fill];
+}
+
+- (void)flashEyes
+{
+    self.eyeColor = [UIColor yellowColor];
+    [self setNeedsDisplay];
+    [NSTimer scheduledTimerWithTimeInterval:.4 target:self selector:@selector(unflashEyes) userInfo:nil repeats:NO];
+}
+
+- (void)unflashEyes
+{
+    self.eyeColor = [UIColor redColor];
+    [self setNeedsDisplay];
 }
 
 @end

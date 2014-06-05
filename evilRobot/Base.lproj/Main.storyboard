@@ -20,12 +20,25 @@
                                 <rect key="frame" x="65" y="149" width="190" height="270"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2ZV-1Z-uZ4" appends="YES" id="vCT-HP-xN0"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                     </view>
+                    <connections>
+                        <outlet property="robot" destination="6KD-Rx-sJy" id="yZs-5j-Jup"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2ZV-1Z-uZ4">
+                    <connections>
+                        <action selector="tapReceived:" destination="vXZ-lx-hvc" id="v7p-2f-Vxj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="269" y="69"/>
         </scene>
