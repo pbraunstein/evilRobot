@@ -10,6 +10,7 @@
 
 @implementation robotView
 
+#pragma mark - initialization
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -25,6 +26,14 @@
     self.opaque = NO;
     self.backgroundColor = nil;
     
+    // Initialize properties
+    _body = CGRectMake(0.0, ((self.bounds.size.height * 1) / 3), self.bounds.size.width, ((self.bounds.size.height * 2) / 3));
+    float width = self.body.size.width / 8;
+    float height = self.bounds.size.height / 16;
+    _neck = CGRectMake(self.body.size.width / 2 - (width / 2), self.body.origin.y - height, width, height);
+    float headHeight = (self.bounds.size.height / 4);
+    _head = CGRectMake(self.body.origin.x, self.body.origin.y - self.neck.size.height - headHeight, self.body.size.width, headHeight);
+    
     // Redraw if things change
     self.contentMode = UIViewContentModeRedraw;
 }
@@ -35,25 +44,58 @@
 }
 
 
+#pragma mark - drawing
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    UIBezierPath *body = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(10.0, 10.0)];
-    
-    [body addClip];
-    
-    [[UIColor whiteColor] setFill];
-    
-    UIRectFill(self.bounds);
-    
-    [[UIColor blackColor]setStroke];
-    
-    [body stroke];
+    [self drawBody];
+    [self drawNeck];
+    [self drawHead];
     
     
 }
 
+- (void)drawBody
+{
+    // Must store context state in order for clipping to work
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    
+    UIBezierPath *toDraw = [UIBezierPath bezierPathWithRoundedRect:self.body byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(8.0, 8.0)];
+
+    
+    [toDraw addClip];
+    
+    
+    [[UIColor grayColor] setFill];
+    UIRectFill(self.body);
+    
+    [toDraw fill];
+    CGContextRestoreGState(context);  // Done with this context state -- get rid of it
+}
+
+- (void)drawNeck
+{
+    UIBezierPath *toDraw = [UIBezierPath bezierPathWithRect:self.neck];
+    
+    
+    [[UIColor grayColor] setFill];
+    UIRectFill(self.neck);
+    
+    [toDraw fill];
+}
+
+
+- (void)drawHead
+{
+    UIBezierPath *toDraw = [UIBezierPath bezierPathWithRect:self.head];
+    
+    [[UIColor grayColor]setFill];
+    UIRectFill(self.head);
+    
+    [toDraw fill];
+}
 
 @end
