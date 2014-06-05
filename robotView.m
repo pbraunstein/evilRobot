@@ -8,6 +8,10 @@
 
 #import "robotView.h"
 
+@interface robotView()
+
+@end
+
 @implementation robotView
 
 #pragma mark - initialization
@@ -39,6 +43,11 @@
     self.eyeOneCenter = CGPointMake(self.head.origin.x + (self.head.size.width / 3), self.head.origin.y + (self.head.size.height / 2));
     self.eyeTwoCenter = CGPointMake(self.head.origin.x + (2 * self.head.size.width / 3), self.head.origin.y + (self.head.size.height / 2));
     
+    // Antena
+    self.antenaRadius = 5.0;
+    self.antenaBulb = CGPointMake(self.body.size.width / 2, self.bounds.origin.y + self.antenaRadius);
+    self.bulbRed = NO;
+    
     // Redraw if things change
     self.contentMode = UIViewContentModeRedraw;
 }
@@ -57,8 +66,10 @@
 {
     [self drawBody];
     [self drawNeck];
+    [self drawAntena];
     [self drawHead];
     [self drawEyes];
+   
     
     
 }
@@ -106,19 +117,31 @@
 
 - (void)drawEyes
 {
-    UIBezierPath * eyeOne = [UIBezierPath bezierPathWithArcCenter:self.eyeOneCenter radius:self.eyeRadius startAngle:0 endAngle:360 clockwise:YES];
+    UIBezierPath *eyeOne = [UIBezierPath bezierPathWithArcCenter:self.eyeOneCenter radius:self.eyeRadius startAngle:0 endAngle:360 clockwise:YES];
      [[UIColor redColor] setFill];
     
     
     [eyeOne fill];
     [eyeOne stroke];
     
-    UIBezierPath * eyeTwo = [UIBezierPath bezierPathWithArcCenter:self.eyeTwoCenter radius:self.eyeRadius startAngle:0 endAngle:360 clockwise:YES];
+    UIBezierPath *eyeTwo = [UIBezierPath bezierPathWithArcCenter:self.eyeTwoCenter radius:self.eyeRadius startAngle:0 endAngle:360 clockwise:YES];
     
    
     [eyeTwo fill];
     
     [eyeTwo stroke];
+}
+
+- (void)drawAntena{
+    UIBezierPath *bulb = [UIBezierPath bezierPathWithArcCenter:self.antenaBulb radius:self.antenaRadius startAngle:0 endAngle:360 clockwise:YES];
+    
+    if (self.bulbRed) {
+        [[UIColor redColor]setFill];
+    } else {
+        [[UIColor grayColor]setFill];
+    }
+
+    [bulb fill];
 }
 
 @end

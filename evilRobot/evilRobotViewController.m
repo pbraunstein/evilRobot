@@ -7,6 +7,7 @@
 //
 
 #import "evilRobotViewController.h"
+#import "robotView.h"
 
 @interface evilRobotViewController ()
 
@@ -17,7 +18,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self startWatch];
+}
+
+- (void) startWatch
+{
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(flash) userInfo:nil repeats:YES];
+}
+
+- (void)flash
+{
+    for (UIView *view in [self.view subviews]) {
+        if ([view isKindOfClass:[robotView class]]) {
+            robotView *thisClass = (robotView *)view;
+            thisClass.bulbRed = !thisClass.bulbRed;
+            [thisClass setNeedsDisplay];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

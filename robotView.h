@@ -15,4 +15,7 @@
 @property (nonatomic) CGFloat eyeRadius;
 @property (nonatomic) CGPoint eyeOneCenter;
 @property (nonatomic) CGPoint eyeTwoCenter;
+@property (nonatomic) CGPoint antenaBulb;
+@property (nonatomic) CGFloat antenaRadius;
+@property (nonatomic) BOOL bulbRed;
 @end
