@@ -34,6 +34,11 @@
     float headHeight = (self.bounds.size.height / 4);
     _head = CGRectMake(self.body.origin.x, self.body.origin.y - self.neck.size.height - headHeight, self.body.size.width, headHeight);
     
+    // Eyes
+    self.eyeRadius = 10;
+    self.eyeOneCenter = CGPointMake(self.head.origin.x + (self.head.size.width / 3), self.head.origin.y + (self.head.size.height / 2));
+    self.eyeTwoCenter = CGPointMake(self.head.origin.x + (2 * self.head.size.width / 3), self.head.origin.y + (self.head.size.height / 2));
+    
     // Redraw if things change
     self.contentMode = UIViewContentModeRedraw;
 }
@@ -53,6 +58,7 @@
     [self drawBody];
     [self drawNeck];
     [self drawHead];
+    [self drawEyes];
     
     
 }
@@ -96,6 +102,23 @@
     UIRectFill(self.head);
     
     [toDraw fill];
+}
+
+- (void)drawEyes
+{
+    UIBezierPath * eyeOne = [UIBezierPath bezierPathWithArcCenter:self.eyeOneCenter radius:self.eyeRadius startAngle:0 endAngle:360 clockwise:YES];
+     [[UIColor redColor] setFill];
+    
+    
+    [eyeOne fill];
+    [eyeOne stroke];
+    
+    UIBezierPath * eyeTwo = [UIBezierPath bezierPathWithArcCenter:self.eyeTwoCenter radius:self.eyeRadius startAngle:0 endAngle:360 clockwise:YES];
+    
+   
+    [eyeTwo fill];
+    
+    [eyeTwo stroke];
 }
 
 @end

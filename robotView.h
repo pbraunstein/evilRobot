@@ -12,4 +12,7 @@
 @property (nonatomic) CGRect head;
 @property (nonatomic) CGRect neck;
 @property (nonatomic) CGRect body;
+@property (nonatomic) CGFloat eyeRadius;
+@property (nonatomic) CGPoint eyeOneCenter;
+@property (nonatomic) CGPoint eyeTwoCenter;
 @end
