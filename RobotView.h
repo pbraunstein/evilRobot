@@ -1,4 +1,4 @@
-//
+
 //  robotView.h
 //  evilRobot
 //
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface robotView : UIView
+@interface RobotView : UIView
 
 // whether the antena bulb is flashing
 @property (nonatomic) BOOL bulbRed;

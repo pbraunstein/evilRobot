@@ -21,7 +21,7 @@
 		B04B0E421940D0250083FFCA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04B0E241940D0240083FFCA /* UIKit.framework */; };
 		B04B0E4A1940D0250083FFCA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B04B0E481940D0250083FFCA /* InfoPlist.strings */; };
 		B04B0E4C1940D0250083FFCA /* evilRobotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B04B0E4B1940D0250083FFCA /* evilRobotTests.m */; };
-		B04B0E5A1940D0C50083FFCA /* robotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B04B0E591940D0C50083FFCA /* robotView.m */; };
+		B04B0E5A1940D0C50083FFCA /* RobotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B04B0E591940D0C50083FFCA /* RobotView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,8 @@
 		B04B0E471940D0250083FFCA /* evilRobotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "evilRobotTests-Info.plist"; sourceTree = "<group>"; };
 		B04B0E491940D0250083FFCA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B04B0E4B1940D0250083FFCA /* evilRobotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = evilRobotTests.m; sourceTree = "<group>"; };
-		B04B0E581940D0C50083FFCA /* robotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = robotView.h; sourceTree = "<group>"; };
-		B04B0E591940D0C50083FFCA /* robotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = robotView.m; sourceTree = "<group>"; };
+		B04B0E581940D0C50083FFCA /* RobotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotView.h; sourceTree = "<group>"; };
+		B04B0E591940D0C50083FFCA /* RobotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +85,8 @@
 		B04B0E141940D0240083FFCA = {
 			isa = PBXGroup;
 			children = (
-				B04B0E581940D0C50083FFCA /* robotView.h */,
-				B04B0E591940D0C50083FFCA /* robotView.m */,
+				B04B0E581940D0C50083FFCA /* RobotView.h */,
+				B04B0E591940D0C50083FFCA /* RobotView.m */,
 				B04B0E261940D0240083FFCA /* evilRobot */,
 				B04B0E451940D0250083FFCA /* evilRobotTests */,
 				B04B0E1F1940D0240083FFCA /* Frameworks */,
@@ -258,7 +258,7 @@
 				B04B0E371940D0240083FFCA /* evilRobotViewController.m in Sources */,
 				B04B0E2D1940D0240083FFCA /* main.m in Sources */,
 				B04B0E311940D0240083FFCA /* evilRobotAppDelegate.m in Sources */,
-				B04B0E5A1940D0C50083FFCA /* robotView.m in Sources */,
+				B04B0E5A1940D0C50083FFCA /* RobotView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +463,7 @@
 				B04B0E511940D0250083FFCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B04B0E521940D0250083FFCA /* Build configuration list for PBXNativeTarget "evilRobotTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +472,7 @@
 				B04B0E541940D0250083FFCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

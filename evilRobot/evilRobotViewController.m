@@ -10,7 +10,7 @@
 #import "robotView.h"
 
 @interface evilRobotViewController ()
-@property (weak, nonatomic) IBOutlet robotView *robot;
+@property (weak, nonatomic) IBOutlet RobotView *robot;
 
 @end
 

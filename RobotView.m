@@ -1,14 +1,14 @@
 //
-//  robotView.m
+//  RobotView.m
 //  evilRobot
 //
 //  Created by Phippe on 6/5/14.
 //  Copyright (c) 2014 Phippe. All rights reserved.
 //
 
-#import "robotView.h"
+#import "RobotView.h"
 
-@interface robotView()
+@interface RobotView()
 @property (nonatomic) CGRect head;
 @property (nonatomic) CGRect neck;
 @property (nonatomic) CGRect body;
@@ -20,7 +20,7 @@
 @property (nonatomic) CGFloat antenaRadius;
 @end
 
-@implementation robotView
+@implementation RobotView
 
 #pragma mark - initialization
 - (id)initWithFrame:(CGRect)frame
@@ -50,7 +50,7 @@
     self.eyeRadius = 10;
     self.eyeOneCenter = CGPointMake(self.head.origin.x + (self.head.size.width / 3), self.head.origin.y + (self.head.size.height / 2));
     self.eyeTwoCenter = CGPointMake(self.head.origin.x + (2 * self.head.size.width / 3), self.head.origin.y + (self.head.size.height / 2));
-    self.eyeColor = [UIColor redColor];
+    self.eyeColor = [UIColor yellowColor];
     
     // Antena
     self.antenaRadius = 5.0;
@@ -79,8 +79,6 @@
     [self drawHead];
     [self drawEyes];
    
-    
-    
 }
 
 - (void)drawBody
@@ -155,14 +153,14 @@
 
 - (void)flashEyes
 {
-    self.eyeColor = [UIColor yellowColor];
+    self.eyeColor = [UIColor redColor];
     [self setNeedsDisplay];
     [NSTimer scheduledTimerWithTimeInterval:.4 target:self selector:@selector(unflashEyes) userInfo:nil repeats:NO];
 }
 
 - (void)unflashEyes
 {
-    self.eyeColor = [UIColor redColor];
+    self.eyeColor = [UIColor yellowColor];
     [self setNeedsDisplay];
 }
 
