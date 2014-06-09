@@ -16,7 +16,7 @@
 @property (nonatomic) CGFloat eyeRadius;
 @property (nonatomic) CGPoint eyeOneCenter;
 @property (nonatomic) CGPoint eyeTwoCenter;
-@property (nonatomic) UIColor *eyeColor;
+@property (strong, nonatomic) UIColor *eyeColor;
 @property (nonatomic) CGPoint antenaBulb;
 @property (nonatomic) CGFloat antenaRadius;
 @end
