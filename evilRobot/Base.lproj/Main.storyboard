@@ -23,6 +23,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="2ZV-1Z-uZ4" appends="YES" id="vCT-HP-xN0"/>
+                                    <outletCollection property="gestureRecognizers" destination="Fxa-dj-8BL" appends="YES" id="cmT-QP-S8G"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -34,13 +35,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="Fxa-dj-8BL">
+                    <connections>
+                        <action selector="pinchReceived:" destination="vXZ-lx-hvc" id="CWy-NY-nTd"/>
+                    </connections>
+                </pinchGestureRecognizer>
                 <tapGestureRecognizer id="2ZV-1Z-uZ4">
                     <connections>
                         <action selector="tapReceived:" destination="vXZ-lx-hvc" id="v7p-2f-Vxj"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="269" y="69"/>
+            <point key="canvasLocation" x="329" y="-104"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

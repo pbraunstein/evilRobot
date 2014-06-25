@@ -42,4 +42,14 @@
     [self.robot flashEyes];
 }
 
+
+- (IBAction)pinchReceived:(UIPinchGestureRecognizer *)sender {
+    if ((sender.state == UIGestureRecognizerStateChanged) ||
+        (sender.state == UIGestureRecognizerStateEnded)) {
+        [self.robot scaleEyes:sender.scale];
+        
+    }
+        
+}
+
 @end

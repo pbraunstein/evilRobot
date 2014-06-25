@@ -16,4 +16,7 @@
 
 // flashEyes to make them menacing
 - (void)flashEyes;
+
+// Scale eyes responding to pinch gesture
+- (void)scaleEyes:(CGFloat)scale;
 @end

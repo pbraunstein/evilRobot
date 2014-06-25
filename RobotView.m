@@ -165,4 +165,21 @@
     [self setNeedsDisplay];
 }
 
+- (void)scaleEyes:(CGFloat)scale
+{
+    CGFloat newSize = scale * self.eyeRadius;
+    
+    // Too small
+    if (newSize <= 1.0) return;
+    
+    // Too big
+    if (newSize >= (self.head.size.height / 2)) return;
+
+    // Adjust eye radius
+    self.eyeRadius = scale * self.eyeRadius;
+    
+    // Redraw
+    [self setNeedsDisplay];
+}
+
 @end
