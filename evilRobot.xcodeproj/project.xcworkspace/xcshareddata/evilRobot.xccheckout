@@ -10,29 +10,29 @@
 	<string>evilRobot</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F15FFC03-ADD1-4900-9CFD-8DF6AA8C0C20</key>
+		<key>6B599392B04DE47AA3606240D27F43ECCE5E9ABA</key>
 		<string>https://github.com/pbraunstein/evilRobot</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>evilRobot.xcodeproj/project.xcworkspace</string>
+	<string>evilRobot.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F15FFC03-ADD1-4900-9CFD-8DF6AA8C0C20</key>
+		<key>6B599392B04DE47AA3606240D27F43ECCE5E9ABA</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/pbraunstein/evilRobot</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F15FFC03-ADD1-4900-9CFD-8DF6AA8C0C20</string>
+	<string>6B599392B04DE47AA3606240D27F43ECCE5E9ABA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F15FFC03-ADD1-4900-9CFD-8DF6AA8C0C20</string>
+			<string>6B599392B04DE47AA3606240D27F43ECCE5E9ABA</string>
 			<key>IDESourceControlWCCName</key>
 			<string>evilRobot</string>
 		</dict>
